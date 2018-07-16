@@ -10,18 +10,18 @@ console.log(randomNumber());
 
 // String Challenge for Javascript
 
-let animalName = 'monkey';
+let animalName = 'Dog';
 
 //Takes animalName from the global scope and inserts it into the parameter of the favoriteAnimal function
 const favoriteAnimal = (animal) => {
 	//returns a different string depending on the animalName passed into the function
-	if(animal === 'cat') {
+	if(animal.toLowerCase() === 'cat') {
 		return `In Japanese, ${animal}s say "にゃ"!`;
-	} else if(animal === 'dog') {
+	} else if(animal.toLowerCase() === 'dog') {
 		return `In Japanese, ${animal}s say "わん”!`;
-	} else if(animal === 'panda') {
+	} else if(animal.toLowerCase() === 'panda') {
 		return `Um,....Not really sure what ${animal}s say.`;
-	} else if(animal === 'monkey') {
+	} else if(animal.toLowerCase() === 'monkey') {
 		return `${animal}s go きき in Japanese.`
 	} else {
 		return `Your choice is highly illogical`;
@@ -31,6 +31,21 @@ const favoriteAnimal = (animal) => {
 //Logs the result of running the favoriteAnimal function to the console.
 console.log(favoriteAnimal(animalName));
 
-//
+//Array challenge for JavaScript
+const dylansShows = ['Star Trek', 'Office Space', 'Star Wars', 'The Simpsons'];
+const dylansFavorites = [];
+const moviesNotWorthSeeing = [];
 
+function shows() {
+	for(let i = 0; i < dylansShows.length; i++) {
+		if(dylansShows[i].includes('Wars')) {
+			moviesNotWorthSeeing.push(dylansShows[i]);
+		} else {
+			dylansFavorites.push(dylansShows[i]);
+		}
+	}
+	return `Some really cool shows to watch are: ${dylansFavorites.join(', ')}. Movies you want to avoid at all costs are: ${moviesNotWorthSeeing.join('')}.`;
+}
+
+console.log(shows());
 
