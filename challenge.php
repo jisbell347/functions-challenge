@@ -25,7 +25,7 @@ function animals($animalName) {
 		return "Your choice is highly illogical";
 };
 
-echo animals("Rabbit");
+echo animals("Cat");
 
 // Array Challenge in PHP
 function shows() {
@@ -40,8 +40,10 @@ function shows() {
 			array_push($showsToWatch, $dylansShows[$x]);
 		}
 	}
-	var_dump(implode($moviesToAvoid, " Should avoid: "));
-	var_dump(implode($showsToWatch, "Should watch: "));
+	$avoid = implode(',', $moviesToAvoid);
+	$watch = implode(' ,', $showsToWatch);
+
+	echo "The shows to avoid are $avoid and the shows to watch are $watch.";
 };
 
 shows();
