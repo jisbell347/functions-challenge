@@ -33,16 +33,15 @@ function shows() {
 	$showsToWatch = array();
 	$moviesToAvoid = array();
 
-	for($x = 0; $x < $dylansShows; $x++) {
-		if($x === in_array("Star Wars", $dylansShows)) {
+	for($x = 0; $x < count($dylansShows); $x++) {
+		if(in_array("Star Wars", $dylansShows)) {
 			array_push($moviesToAvoid, $dylansShows[$x]);
-			return $moviesToAvoid;
 		} else {
 			array_push($showsToWatch, $dylansShows[$x]);
-			return $showsToWatch;
 		}
 	}
-	var_dump($showsToWatch);
+	var_dump(implode($moviesToAvoid, " Should avoid: "));
+	var_dump(implode($showsToWatch, "Should watch: "));
 };
 
 shows();
